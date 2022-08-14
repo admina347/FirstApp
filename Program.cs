@@ -2,20 +2,43 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
-    {
+	public static void Main(string[] args)
+	{
+		GetColor:
+		Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-		Console.Write("Введите имя: ");
-		var name = Console.ReadLine();
-		Console.Write("Введите возраст: ");
-		var age = Convert.ToInt32(Console.ReadLine());
-		Console.WriteLine("Your name is {0} and age is {1} ", name, age);
-		Console.Write("Введите дату рождения: ");
-		var birthdate = Console.ReadLine();
-		Console.WriteLine("Your birthdate is: {0}", birthdate);
+		var color = Console.ReadLine();
 
-		Console.WriteLine(myName);
+		switch (color)
+		{
+			case "red":
+				Console.BackgroundColor = ConsoleColor.Red;
+				Console.ForegroundColor = ConsoleColor.Black;
 
-        Console.ReadKey();
-    }
+				Console.WriteLine("Your color is red!");
+				goto GetColor;
+
+			case "green":
+				Console.BackgroundColor = ConsoleColor.Green;
+				Console.ForegroundColor = ConsoleColor.Black;
+
+				Console.WriteLine("Your color is green!");
+				goto GetColor;
+			case "cyan":
+
+				Console.BackgroundColor = ConsoleColor.Cyan;
+				Console.ForegroundColor = ConsoleColor.Black;
+
+				Console.WriteLine("Your color is cyan!");
+				goto GetColor;
+
+			default:
+				Console.BackgroundColor = ConsoleColor.Yellow;
+				Console.ForegroundColor = ConsoleColor.Red;
+
+				Console.WriteLine("Your color is Default color!");
+				break;
+		}
+		
+	}
 }
