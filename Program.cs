@@ -4,12 +4,15 @@ class MainClass
 {
 	public static void Main(string[] args)
 	{
-		(string name, int age) anketa;
+		var (name, age) = ("Евгения", 27);
+		Console.WriteLine("Ваше имя: {0}", name);
+		Console.WriteLine("Ваш возраст: {0}", age);
 		Console.Write("Введите имя: ");
-		anketa.name = Console.ReadLine();
+		name = Console.ReadLine();
 		Console.Write("Введите возраст: ");
-		anketa.age = Convert.ToInt32(Console.ReadLine());
-		Console.WriteLine("Your name is {0} and age is {1} ", anketa.name, anketa.age);
+		age = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Ваше имя: {0}", name);
+		Console.WriteLine("Ваш возраст: {0}", age);
 
 		Console.ReadKey();
 	}
